@@ -1,0 +1,18 @@
+# Ignorar arquivos do H2 Database gerados em runtime
+*.mv.db
+*.trace.db
+
+# Ignorar o diretorio de build do Maven
+target/
+
+# Ignorar arquivos e diretorios de IDEs comuns
+.classpath
+.project
+.settings/
+.idea/
+.vscode/
+nbproject/
+*.iml
+
+# Ignorar arquivos de log
+*.log
