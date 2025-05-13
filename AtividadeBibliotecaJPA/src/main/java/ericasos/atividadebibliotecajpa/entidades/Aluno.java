@@ -1,30 +1,32 @@
 package ericasos.atividadebibliotecajpa.entidades;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.Objects;
 
-@Entity 
-
+@Entity
+@Table(name = "Aluno")
 public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "aluno_id")
-    private Long id; 
+    private Long id;
 
-    @Column(name = "matriculaAluno", unique = true, nullable = false, length = 20)
-    private String matriculaAluno;
+    @Column(name = "matriculaAluno", unique = true, nullable = false)
+    private Integer matriculaAluno;
 
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Emprestimo> emprestimos;
-
     public Aluno() {
     }
 
-    public Aluno(String matriculaAluno, String nome) {
+    public Aluno(Integer matriculaAluno, String nome) {
         this.matriculaAluno = matriculaAluno;
         this.nome = nome;
     }
@@ -37,11 +39,11 @@ public class Aluno {
         this.id = id;
     }
 
-    public String getMatriculaAluno() {
+    public Integer getMatriculaAluno() {
         return matriculaAluno;
     }
 
-    public void setMatriculaAluno(String matriculaAluno) {
+    public void setMatriculaAluno(Integer matriculaAluno) {
         this.matriculaAluno = matriculaAluno;
     }
 
@@ -53,29 +55,24 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public List<Emprestimo> getEmprestimos() {
-        return emprestimos;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aluno aluno = (Aluno) o;
+        return Objects.equals(id, aluno.id) && Objects.equals(matriculaAluno, aluno.matriculaAluno);
     }
 
-    public void setEmprestimos(List<Emprestimo> emprestimos) {
-        this.emprestimos = emprestimos;
-    }
-
-    public void addEmprestimo(Emprestimo emprestimo) {
-        this.emprestimos.add(emprestimo);
-        emprestimo.setAluno(this);
-    }
-
-    public void removeEmprestimo(Emprestimo emprestimo) {
-        this.emprestimos.remove(emprestimo);
-        emprestimo.setAluno(null);
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, matriculaAluno);
     }
 
     @Override
     public String toString() {
         return "Aluno{" +
                "id=" + id +
-               ", matriculaAluno='" + matriculaAluno + '\'' +
+               ", matriculaAluno=" + matriculaAluno +
                ", nome='" + nome + '\'' +
                '}';
     }
