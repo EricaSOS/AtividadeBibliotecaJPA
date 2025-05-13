@@ -45,10 +45,10 @@ public class TesteEmprestimoDAO{
             e.printStackTrace();
         } finally {
             if (emprestimoDAO != null) {
-                emprestimoDAO.close(); // Fechar o EntityManager [3, 4]
+                emprestimoDAO.close(); // Fechar o EntityManager
             }
             if (emf != null) {
-                emf.close(); // Fechar o EntityManagerFactory [2]
+                emf.close(); // Fechar o EntityManagerFactory
             }
         }
     }
@@ -57,14 +57,18 @@ public class TesteEmprestimoDAO{
         Aluno aluno = new Aluno();
         aluno.setNome("João da Silva");
         aluno.setMatriculaAluno(2023001);
-        // Em um cenário real, Aluno e Publicacao seriam salvos ou recuperados primeiro
-
+        
         Publicacao publicacao = new Publicacao();
         publicacao.setTitulo("Livro Teste JPA");
         publicacao.setAutor("Autor Teste");
         publicacao.setAno(2023);
         publicacao.setTipo("LIVRO");
         publicacao.setCodigoPub(1001);
+        
+        em.getTransaction().begin();
+        em.persist(aluno);
+        em.persist(publicacao);
+        em.getTransaction().commit();
 
         Emprestimo emprestimo = new Emprestimo();
         emprestimo.setDataEmprestimo(new Date());
@@ -73,12 +77,12 @@ public class TesteEmprestimoDAO{
         emprestimo.setPublicacao(publicacao);
 
         emprestimoDAO.salvar(emprestimo);
-        System.out.println("Empréstimo incluído com ID: " + emprestimo.getId()); // Assumindo que getId() existe na entidade Emprestimo
+        System.out.println("Empréstimo incluído com ID: " + emprestimo.getId());
     }
 
     private static void testConsultarPorId() {
-        // Recupere um ID válido de um empréstimo salvo anteriormente, por exemplo, o primeiro salvo
-        Long idParaConsulta = 1L; // Altere para um ID real após executar a inclusão
+        
+        Long idParaConsulta = 1L;
 
         Emprestimo emprestimoEncontrado = emprestimoDAO.buscarPorId(idParaConsulta); 
 
@@ -92,8 +96,8 @@ public class TesteEmprestimoDAO{
     }
 
     private static void testAlterarEmprestimo() {
-        // Recupere um empréstimo existente para alterar
-        Long idParaAlterar = 1L; // Altere para um ID real
+        // Recupera um empréstimo existente para alterar
+        Long idParaAlterar = 1L; 
 
         Emprestimo emprestimoParaAlterar = emprestimoDAO.buscarPorId(idParaAlterar);
 
@@ -107,7 +111,7 @@ public class TesteEmprestimoDAO{
             emprestimoDAO.salvar(emprestimoParaAlterar);
             System.out.println("Empréstimo com ID " + idParaAlterar + " alterado.");
 
-            // Opcional: Consultar novamente para confirmar a alteração
+            // Consultar novamente para confirmar a alteração
             Emprestimo emprestimoAlterado = emprestimoDAO.buscarPorId(idParaAlterar);
              if (emprestimoAlterado != null) {
                  System.out.println("Empréstimo após alteração: " + emprestimoAlterado.getId() +
@@ -137,8 +141,8 @@ public class TesteEmprestimoDAO{
     }
 
     private static void testExcluirEmprestimo() {
-        // Recupere um empréstimo existente para excluir
-        Long idParaExcluir = 1L; // Altere para um ID real
+        // Recupera um empréstimo existente para excluir
+        Long idParaExcluir = 1L; 
 
         Emprestimo emprestimoParaExcluir = emprestimoDAO.buscarPorId(idParaExcluir);
 
