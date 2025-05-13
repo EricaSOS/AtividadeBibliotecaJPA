@@ -35,7 +35,7 @@ public class EmprestimoDAO implements GenericDAO<Emprestimo> {
     }
 
     @Override
-    public Emprestimo buscarPorId(Object id) {
+    public Emprestimo buscarPorId(Long id) {
         try {
             return em.find(Emprestimo.class, id);
         } catch (Exception e) {

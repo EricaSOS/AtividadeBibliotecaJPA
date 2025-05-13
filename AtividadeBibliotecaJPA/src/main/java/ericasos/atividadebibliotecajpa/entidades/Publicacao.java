@@ -4,21 +4,22 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-
+@Table(name = "Publicacao")
 public class Publicacao {
     @Id // Chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "publicacao_id")
     private Long id;
 
-    @Column(name = "codigoPub", unique = true, nullable = false, length = 20) 
-    private String codigoPub;
+    @Column(name = "codigoPub", unique = true, nullable = false)
+    private int codigoPub;
+
 
     @Column(name = "titulo", nullable = false, length = 100)
     private String titulo;
 
     @Column(name = "ano") 
-    private Integer ano;
+    private int ano;
 
     @Column(name = "autor", length = 100) 
     private String autor; 
@@ -34,7 +35,7 @@ public class Publicacao {
         
     }
 
-    public Publicacao(String codigoPub, String titulo, Integer ano, String autor, String tipo) {
+    public Publicacao(int codigoPub, String titulo, int ano, String autor, String tipo) {
         this.codigoPub = codigoPub;
         this.titulo = titulo;
         this.ano = ano;
@@ -50,11 +51,11 @@ public class Publicacao {
         this.id = id;
     }
 
-    public String getCodigoPub() {
+    public int getCodigoPub() {
         return codigoPub;
     }
 
-    public void setCodigoPub(String codigoPub) {
+    public void setCodigoPub(int codigoPub) {
         this.codigoPub = codigoPub;
     }
 
@@ -66,11 +67,11 @@ public class Publicacao {
         this.titulo = titulo;
     }
 
-    public Integer getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(Integer ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
@@ -98,7 +99,7 @@ public class Publicacao {
         this.emprestimos = emprestimos;
     }
 
-    // Opcional: Métodos helper para gerenciar a lista de empréstimos
+    // Métodos helper para gerenciar a lista de empréstimos
      public void addEmprestimo(Emprestimo emprestimo) {
         this.emprestimos.add(emprestimo);
         emprestimo.setPublicacao(this);
