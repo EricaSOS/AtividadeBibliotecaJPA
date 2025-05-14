@@ -4,8 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
     <class>ericasos.atividadebibliotecajpa.entidades.Emprestimo</class>
-    <class>ericasosericasos.atividadebibliotecajpa.entidades.Aluno</class>
-    <class>ericaericasos.atividadebibliotecajpa.entidades.Publicacao</class>    
+    <class>ericasos.atividadebibliotecajpa.entidades.Aluno</class>
+    <class>ericasos.atividadebibliotecajpa.entidades.Publicacao</class>    
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/OneDrive/CURSO IFPA - Analise Desenvolv Sistemas/07. TADS - semestre 01.2025/01. Aplicacao de BD/AtividadePraticaBD01/Database"/>
       <property name="javax.persistence.jdbc.user" value="sa"/>
