@@ -5,7 +5,7 @@ import ericasos.atividadebibliotecajpa.entidades.Emprestimo;
 import ericasos.atividadebibliotecajpa.entidades.Publicacao;
 
 import java.util.Date;
-//import java.util.List;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -26,7 +26,7 @@ public class TesteEmprestimoDAO{
 
             System.out.println("--- Teste de Inclusão ---");
             testIncluirEmprestimo();
-/*
+
             System.out.println("\n--- Teste de Consulta por ID ---");
             testConsultarPorId();
 
@@ -40,7 +40,7 @@ public class TesteEmprestimoDAO{
             testExcluirEmprestimo();
 
             System.out.println("\n--- Fim dos Testes ---");
-*/
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -79,7 +79,7 @@ public class TesteEmprestimoDAO{
         emprestimoDAO.salvar(emprestimo);
         System.out.println("Empréstimo incluído com ID: " + emprestimo.getId());
     }
-/*
+
     private static void testConsultarPorId() {
         
         Long idParaConsulta = 1L;
@@ -160,5 +160,5 @@ public class TesteEmprestimoDAO{
         } else {
             System.out.println("Empréstimo com ID " + idParaExcluir + " não encontrado para exclusão.");
         }
-    }    */
+    }    
 }
