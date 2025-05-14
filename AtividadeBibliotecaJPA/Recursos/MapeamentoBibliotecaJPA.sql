@@ -1,11 +1,11 @@
 CREATE TABLE Aluno (
-    aluno_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    aluno_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
     matriculaAluno INTEGER UNIQUE NOT NULL,
     nome VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Publicacao (
-    publicacao_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    publicacao_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
     codigoPub INTEGER UNIQUE NOT NULL,
     titulo VARCHAR(100) NOT NULL,
     ano INT,
@@ -14,7 +14,7 @@ CREATE TABLE Publicacao (
 );
 
 CREATE TABLE Emprestimo (
-    emprestimo_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    emprestimo_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
     dataEmprestimo DATE NOT NULL, 
     dataDevolucao DATE,
     aluno_id INTEGER NOT NULL,
