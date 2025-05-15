@@ -69,6 +69,7 @@
         </dependency>
     </dependencies>
     <build>
+        <sourceDirectory>src</sourceDirectory>
         <resources>
           <resource>
             <directory>src/main/java</directory>
@@ -82,7 +83,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
             <configuration>
-              <release>11</release>
+              <release>17</release>
             </configuration>
           </plugin>
         </plugins>
