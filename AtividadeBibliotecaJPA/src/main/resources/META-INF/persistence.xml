@@ -5,16 +5,17 @@
     <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
     <class>ericasos.atividadebibliotecajpa.entidades.Emprestimo</class>
     <class>ericasos.atividadebibliotecajpa.entidades.Aluno</class>
-    <class>ericasos.atividadebibliotecajpa.entidades.Publicacao</class>    
+    <class>ericasos.atividadebibliotecajpa.entidades.Publicacao</class>
+    <class>DAO.GenericDAO</class>
+    <class>DAO.EmprestimoDAO</class>
+    <class>.TesteEmprestimoDAO</class>    
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/OneDrive/CURSO IFPA - Analise Desenvolv Sistemas/07. TADS - semestre 01.2025/01. Aplicacao de BD/AtividadePraticaBD01/Database"/>
       <property name="javax.persistence.jdbc.user" value="sa"/>
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
      
-      <property name="eclipselink.logging.level" value="FINE"/>
-      <property name="eclipselink.ddl-generation" value="create-tables"/>
-      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
     </properties>
   </persistence-unit>
 </persistence>
