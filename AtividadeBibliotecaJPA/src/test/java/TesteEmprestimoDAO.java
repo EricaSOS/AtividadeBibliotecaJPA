@@ -1,5 +1,5 @@
 
-import DAO.EmprestimoDAO; 
+import main.java.DAO.EmprestimoDAO; 
 import ericasos.atividadebibliotecajpa.entidades.Aluno;
 import ericasos.atividadebibliotecajpa.entidades.Emprestimo;
 import ericasos.atividadebibliotecajpa.entidades.Publicacao;

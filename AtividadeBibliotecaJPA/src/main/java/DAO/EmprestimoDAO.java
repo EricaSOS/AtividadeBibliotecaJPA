@@ -1,5 +1,6 @@
-package DAO;
+package main.java.DAO;
 
+import DAO.GenericDAO;
 import DAO.GenericDAO;
 import ericasos.atividadebibliotecajpa.entidades.Emprestimo;
 import javax.persistence.*;
