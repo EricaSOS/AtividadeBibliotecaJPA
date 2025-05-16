@@ -20,7 +20,7 @@ Este projeto é uma atividade prática da disciplina de Banco de Dados, utilizan
 
 As principais dependências do projeto estão no `pom.xml`:
 
-- `javax.persistence` (especificação da JPA) - acabei excluindo, pois causou problemas para a criação do banco.
+- `javax.persistence` (especificação da JPA)
 - `eclipselink` (provedor JPA)
 - `h2` (banco de dados embarcado)
 - Outras bibliotecas auxiliares do EclipseLink
