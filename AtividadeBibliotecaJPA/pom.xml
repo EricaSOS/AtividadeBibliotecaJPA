@@ -23,7 +23,8 @@
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
             <version>2.0.0</version>
-        </dependency> -->
+        </dependency> Retirado pois estava conflitando com o Eclipse e não 
+        gerava as tabelas-->
 
         <!-- Dependência do Provedor JPA (Ex: EclipseLink) -->
         <dependency>
