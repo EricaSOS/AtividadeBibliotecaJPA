@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Aluno {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "aluno_id")
     private Long id;
 
@@ -26,7 +26,8 @@ public class Aluno {
     public Aluno() {
     }
 
-    public Aluno(Integer matriculaAluno, String nome) {
+    public Aluno(long id, Integer matriculaAluno, String nome) {
+        this.id = id;
         this.matriculaAluno = matriculaAluno;
         this.nome = nome;
     }

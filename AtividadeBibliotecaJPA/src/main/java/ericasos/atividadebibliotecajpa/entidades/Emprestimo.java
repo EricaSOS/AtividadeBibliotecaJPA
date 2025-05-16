@@ -18,7 +18,7 @@ import java.util.Date;
 public class Emprestimo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "emprestimo_id")
     private Long id;
 

@@ -8,7 +8,11 @@ import ericasos.atividadebibliotecajpa.entidades.Emprestimo;
 
 public class EmprestimoDAO implements GenericDAO<Emprestimo> {
 
-    EntityManager em = getEntityManager();
+    private EntityManager em;
+
+    public EmprestimoDAO(EntityManager em) {
+        this.em = em;
+    }
 
     @Override
     public Emprestimo findById(long id){

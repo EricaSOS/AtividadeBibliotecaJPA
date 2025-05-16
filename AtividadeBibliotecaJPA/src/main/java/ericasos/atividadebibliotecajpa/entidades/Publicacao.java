@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name = "Publicacao")
 public class Publicacao {
     @Id // Chave primária
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "publicacao_id")
     private Long id;
 
