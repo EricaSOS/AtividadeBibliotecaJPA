@@ -29,6 +29,22 @@ public class TesteEmprestimoDAO {
 
         Publicacao p1 = new Publicacao(1001, "Java Básico", 2024, "Autor X", "Livro");
         em.persist(p1);
+        
+        Aluno a2 = new Aluno();
+        a1.setMatriculaAluno(222);
+        a1.setNome("Mélvio da Silva");
+        em.persist(a2);
+
+        Publicacao p2 = new Publicacao(1002, "Sei programar phyton", 2002, "Autor H", "Documentário");
+        em.persist(p2);
+        
+        Aluno a3 = new Aluno();
+        a1.setMatriculaAluno(45874);
+        a1.setNome("Sincero");
+        em.persist(a3);
+
+        Publicacao p3 = new Publicacao(1005, "Como cometer sincericídio", 1982, "Autor Hipócrates", "Manual");
+        em.persist(p3);
 
         em.getTransaction().commit();
         
